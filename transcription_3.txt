@@ -1,0 +1,266 @@
+Introduction
+0:00
+today let's build another transcription
+Building the transcription app with Whisper & Gradio
+0:02
+app using whisper and gradio
+0:04
+so a while back I did a video on
+0:07
+building another transcription app using
+0:09
+whisper and streamlit and it got great
+0:11
+response and a lot of comments which was
+0:13
+really great and so I decided to do a
+0:17
+second video on the same topic using
+0:19
+radio this time to make it a little bit
+0:21
+simpler and easier to run also I
+0:24
+promised someone in the comments to do
+0:25
+that so I always try to keep my promises
+0:27
+okay so we're going to start by simply
+0:29
+importing the dependencies that we need
+Importing dependencies
+0:31
+so we're going to import radio as gr and
+0:34
+we're going to import whisper for doing
+0:37
+the audio transcription now the first
+0:39
+thing we're going to do is we're going
+0:40
+to write a function called transcribe
+Writing the transcribe_audio function
+0:43
+audio which will take in a file path and
+0:47
+output the transcription of that file
+0:49
+the audio file path then we're going to
+0:52
+set up the model from whisper by just
+0:54
+doing
+0:55
+whisper.load model and we're going to
+0:58
+use the base model because you know it
+1:01
+works really well for English and now
+1:03
+we're gonna just set up the result as
+1:06
+the calling the model.transcribe
+1:09
+function from The Whisper model that we
+1:11
+loaded into that transcribed function
+1:13
+we're going to feed the audio file which
+1:17
+is just going to be the file path to
+1:18
+that audio and finally we're going to
+1:20
+return the transcription so that's easy
+1:23
+enough
+1:24
+now we're going to set up our main
+Setting up the main function
+1:26
+function
+1:27
+and the main function is going to be for
+1:29
+building the interfacing gradient and
+1:32
+that will take in a nodule input which
+1:34
+is going to be gradual input audio
+1:39
+which is something that we can just drag
+1:41
+and drop an audio file or we can just
+1:43
+click it and then upload from our local
+1:44
+desktop the source is going to be called
+1:48
+upload and the type is going to be
+1:51
+called file path because that's what
+1:54
+this function accepts in order to run
+1:57
+and now we're going to say output text
+Defining the Gradio interface
+2:00
+is equal to gr dot
+2:05
+outputs.txt box in white Xbox because
+2:08
+it's the text box that's going to be
+2:11
+carrying it's going to be having the um
+2:13
+it's going to have the transcription of
+2:15
+the audio file path
+2:17
+finally once we've set that up we're
+2:19
+just going to set up our interface as
+2:22
+radio dot interface and then we're going
+2:26
+to say that the function for our
+2:28
+interface is the transcribe audio
+2:31
+function
+2:32
+which is the function we just defined
+2:34
+over there
+2:36
+now we're going to set up the inputs as
+2:39
+we're going to set up the inputs as the
+2:42
+audio input right and we're going to set
+2:45
+up the outputs as the output that we
+2:48
+just Define here this variable that
+2:51
+carries the output from the text box
+2:54
+okay that's perfect so now what we can
+2:57
+do is
+2:58
+I can come here and I can say
+Adding a title & description for the app
+3:02
+um let's set up a title for our app it's
+3:06
+just going to be audio transcription
+3:10
+app because you know why not and a quick
+3:15
+description is just going to be
+3:17
+upload an audio file
+3:20
+and hit the
+3:24
+submit button
+3:28
+there we go
+3:30
+perfect now we got it nice let's have
+3:35
+this thing over here perfect
+3:37
+now that we have that we have to launch
+3:39
+our interface so we're going to just
+3:41
+call lunch
+Launching the interface
+3:42
+and that's our app in a nutshell because
+3:45
+python is amazing and we can build super
+3:48
+complex and interesting stuff with just
+3:50
+a few lines of code and now I can just
+3:53
+say if name equal main I'm going to call
+3:56
+the main function which is going to set
+3:59
+up my
+4:00
+transcription or the transcription app
+4:03
+and now that I have all of that we can
+Testing the app
+4:05
+test it so I can come here and say
+4:07
+python Auto transcription app I already
+4:10
+have all radio and Whisper installed so
+4:12
+if you don't run pip install radio
+4:14
+whisper Etc
+4:16
+so now we're running the audio
+4:18
+transcription app which should open here
+4:20
+on the browser on my right
+4:22
+so let's take a look at that
+4:24
+we'll click on the link that's provided
+4:26
+and now this is our Simple app
+4:29
+and I'm going to click here on the Audio
+4:31
+I already have an audio file set up we
+4:34
+can listen to it
+4:39
+awesome and now I can hit submit and I
+4:42
+will do a magic trick and there we have
+4:45
+it here's our transcription for the
+4:48
+audio input that we set up I'm going to
+4:50
+set up a nicely organized GitHub repo
+4:54
+with this project so that you can run it
+4:56
+just by running one command and I want
+4:59
+to make it easy for you guys because you
+5:01
+guys gave me a lot of cool input and a
+5:03
+bunch of awesome comments for the last
+5:05
+video that I did on audio transcription
+5:07
+so I wanted to do that again in a
+5:09
+simpler way and make it easy so that for
+5:12
+those of you that want to use it you can
+5:14
+just go to my repo and just clone and
+5:18
+run and so thanks for watching guys if
+Conclusion and follow up
+5:20
+you like this video don't forget to like
+5:22
+And subscribe and see you next time
+5:24
+cheers

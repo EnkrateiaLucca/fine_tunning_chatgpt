@@ -1,0 +1,20 @@
+📚Chapters
+
+0:02 - Introduction to Flashcards 🎴
+0:06 - The Traditional Method of Creating Flashcards 📝
+0:27 - Introduction to Prompt Engineering and Experiments 🚀
+0:43 - The Process of Automating Flashcards with GPT 🤖
+0:56 - Problem with the Traditional Approach 🚧
+1:09 - How to Bypass these Issues using Decomposition 🛠️
+1:26 - Extracting Information using GPT-4 🧠
+1:50 - Why We Opted for ChatGPT in our Automation Process 💼
+2:04 - Creation of Prompt Candidates for Testing 🧪
+2:21 - Usage of Lan-chain to Create Prompt Templates 💡
+2:31 - Evaluating the Quality of Outputs without Manual Checking 📈
+2:55 - Visualization of Scores using a Bar Chart 📊
+3:06 - Creating Anki Flashcards with the Best Prompt 🎯
+3:17 - Creating Questions and Answers with ChatGPT 📝
+3:33 - Displaying the Final Automated Process 💫
+3:38 - Integrating Space Repetition Systems with Large Language Models 🔄
+3:51 - Discussion on Metrics Evaluation and Potential Issues 🔍
+4:00 - Conclusion and Future Directions 🌈

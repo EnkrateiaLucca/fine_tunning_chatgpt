@@ -1,0 +1,127 @@
+Intro
+0:00
+all right so I live in Lisbon so what I
+0:03
+decided to do was I live in Lisbon which
+0:06
+is not exactly a huge town
+Pope is coming to Lisbon!
+0:10
+okay so I live in Lisbon which is not
+0:12
+exactly a super big city it has
+0:14
+approximately three million inhabitants
+0:16
+and the pope is coming to visit on this
+0:18
+from the 2nd of August to the 6th and
+0:21
+that enlisted an increase in about a
+0:24
+million people who are going to be
+0:26
+coming to Lisbon to see the pope which
+0:30
+for me kind of ignited a bell of oh no
+0:33
+there's going to be a lot of people
+The idea
+0:35
+everywhere so the programmer in me
+0:37
+looked at that and thought okay so how
+0:40
+can we automate staying away from the
+0:44
+hot spots where you know the pope might
+0:46
+visit so there might be like a bunch of
+0:48
+people there I decided to do a little
+Explaining the automation
+0:51
+python automation that essentially helps
+0:54
+me keep track of
+0:56
+where the book is going to be and split
+0:59
+it by days so that I know the you know
+1:02
+areas to avoid when I'm walking around
+1:05
+Lisbon or you know going to town so what
+1:07
+I did was I copied all the itinerary
+A walkthrough the code
+1:10
+from the pope from the official press
+1:11
+release and then I threw that into
+1:14
+charge BT to get some code to structure
+1:17
+that into a panda's data frame I didn't
+1:19
+did a little bit of cleaning and I
+1:21
+certified that all the locations that I
+1:23
+obtained for all the dates and the
+1:25
+timestamps were correct and associated
+1:28
+with the correct date and then what I
+1:30
+did is I used the geopy package to get
+1:34
+the coordinates the latitude and
+The final product
+1:36
+longitude coordinates for each of those
+1:37
+locations separated by the bay and the
+1:40
+time when the pope is going to be
+1:42
+visiting those locations and then I
+1:44
+generated this really cool interactive
+1:46
+heat map of the city of Lisbon where you
+1:49
+can see the spots where the pope is
+1:51
+going to be and I have this very simple
+1:53
+interactive interface where I can click
+1:55
+on a date and then see the spots that
+1:57
+the pope is going to visit that day as
+2:00
+well as you know little lines connecting
+2:02
+those spots so that I have enough like a
+2:04
+small awareness of the region you know a
+2:07
+triangulation of the region where the
+2:09
+pope is going to be so I know which
+2:11
+places to avoid you know whatever which
+2:14
+day of the week when I'm going around
+2:16
+town I wanted to have this kind of like
+2:18
+holistic view so this ended up being a
+2:21
+very cool project to do and that's it if
+2:23
+you like the video don't forget to like
+2:25
+And subscribe and see you next time
+Like and subscribe! :)

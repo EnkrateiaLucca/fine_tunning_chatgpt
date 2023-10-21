@@ -1,0 +1,15 @@
+📚 Chapters:
+00:00 - Introduction 
+00:01 - Creating Anki Flashcards with ChatGPT
+00:06 - Importing Dependencies
+00:14 - Setting Up OpenAI API Key
+00:29 - Getting Content from Clipboard
+00:46 - Running the Script
+00:57 - Creating Conversation with ChatGPT
+01:05 - Setting Up System Role
+01:24 - Setting Up User Message
+01:38 - Formatting for Anki Import
+01:46 - Sending Request to API
+02:35 - Writing the flashcards to file
+02:50 - Creating Anki flashcards
+03:58 - Importing flashcards to Anki

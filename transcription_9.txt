@@ -1,0 +1,149 @@
+Introduction
+0:00
+So we all know that large language models make silly mistakes from big multiplications
+0:04
+to hallucinating information.
+0:05
+Now, what the authors of this paper, Faith and Faith, Limits of Transformers in Compositionality
+0:10
+asked is whether or not transformer based models are actually uncovering rules for problem
+0:16
+solving and exploring true reasoning paths when they're solving problems or are they
+0:21
+just doing some fancy pattern matching between input and output features.
+Questioning transformer-based models
+0:26
+The authors argue that these silly trivial mistakes might indicate a lack of ability to
+0:31
+perform compositional reasoning in transformer based models, arguing that actually what
+0:36
+transformers are doing are just reducing multi step compositional reasoning into some linearized
+Lack of ability to perform compositional reasoning
+0:43
+graph matching to evaluate the compositional reasoning abilities of transformers.
+0:47
+They set on three tasks to assess these capabilities.
+0:50
+A long form multiplication task, the Einstein puzzle and a dynamic programming problem.
+0:55
+Now these tasks were chosen based on the fact that they're centered around compositionality
+0:59
+and that they require the combination of reasoning operations with following a computational
+Three tasks to assess capabilities
+1:04
+path to arrive at correct solution.
+1:06
+They form two hypotheses for this paper.
+1:08
+The first one is that transformers are actually reducing multi step compositional reasoning
+1:12
+to linearized graph matching, which is something that is taught to contrast with multi step
+1:16
+reasoning that learns to apply computational rules to reach correct answers.
+1:21
+The second hypothesis error propagation, which is this idea that because transformers may
+1:24
+have inherent limitations in solving high complexity compositional tasks that exhibit
+1:28
+novel patterns, errors in the early stages may lead to substantial compounding errors
+Hypotheses for the paper
+1:33
+in these subsequent steps, preventing the models from reaching correct solutions.
+1:37
+To investigate these hypotheses, they formulated compositional tasks as computation graphs,
+1:41
+breaking down problem solving to sub modular functional steps, enabling structured measurements
+1:46
+of complexity and the verbalization of computational steps as input sequences to language models.
+1:52
+Now here in figure one, they show an example of a computation graph for a long form multiplication
+1:56
+algorithm A with inputs seven and 49.
+1:59
+They used graph metrics to quantify complexity.
+2:01
+They used reasoning depth as a proxy for the maximum level of multi hop reasoning required
+2:06
+to solve the test, reasoning with as the maximum number of variables required to keep in parallel
+2:13
+during the computation and average parallelism, which is the average with new computation
+Formulating compositional tasks as computation graphs
+2:17
+through the graph.
+2:18
+They used this approach of predicting surface patterns to relative information gain to assess
+2:22
+the strategies for partially correct answers models used in incorrect responses.
+2:27
+You had three tasks for this paper.
+2:29
+The first one was multi-digit multiplication, where you have to manipulate symbols through
+2:33
+the usage of procedural rules.
+2:35
+You had the Einstein puzzle, which involves a list of houses and a list of attributes,
+2:39
+and you have to associate the attributes with the houses to the usage of clues and constraints.
+2:45
+And you had a dynamic programming problem that reads as given a sequence of integers,
+2:50
+find a subsequence with the highest sum such the no true numbers of the subsequence are
+2:53
+adjacent in the original sequence.
+2:55
+Now here in figure two, they show that a zero shot accuracy of the models decreased as the
+2:59
+problem sized increase in each of the tasks.
+Three tasks explained
+3:02
+And they also showed that the average parallelism, which is one of the metrics they used to quantify
+3:06
+complexity was negatively correlated with accuracy of the models.
+3:09
+Now here in figure three, they showed that the GP3 fine tune exhaustively on task specific
+Zero shot accuracy and complexity metrics
+3:13
+data only did well in examples present in the distribution.
+3:17
+Now one of the things the authors wanted to understand is that why is it that transformers
+3:20
+can predict partially correct answers when the overall response is incorrect.
+3:24
+Now they hypothesized that that was the case because of peculiarities in the task distribution
+3:29
+that allowed the model to guess partial answers without performing the multi-step reasoning
+3:34
+required to solve the task.
+3:36
+Here in figure four, they show examples of poor generalization for the GP3 in the puzzle
+3:41
+and DP tasks.
+3:43
+Here in figure five and six, the authors are showing how the ratio of correct nodes, meaning
+Poor generalization and partial solutions
+3:48
+correct partial solutions provided by the models, decreases as the problem size increases
+3:54
+in terms of the number of graph layers, which is one metric they used to quantify complexity.
+3:59
+Finally, the authors present a mathematical argument showcasing why is the case that as
+Ratio of correct nodes and decreasing correct answers
+4:03
+the problem size increases, the chance of the models to produce a correct answer decreases
+4:08
+exponentially.
+4:09
+The authors conclude that transformers often solve multi-step compositional problems by collapsing
+Mathematical argument for reducing correct answers
+4:13
+the depth of compositional operations via analogical pattern matching.
+4:17
+Now there are a lot of things that I liked about this paper, framing problem solving
+4:20
+as computation graphs, quantifying complexity to these graph metrics and showing strong
+4:25
+evidence of the limitations of transformers for compositional reasoning.
+4:28
+If you like this video, don't forget to like and subscribe and see you next time.
+4:32
+Cheers.

@@ -1,0 +1,12 @@
+📚 Chapters:
+00:00 - Intro
+00:32 - Tasks Database
+01:05 - Imports
+01:17 - Setting up the ChatGPT API
+01:52 - Setting the OpenAI API key
+02:00 - Loading Tasks DB from csv file
+02:51 - Main prompt for ChatGPT
+03:34 - Writing Output to file
+04:19 - Visualizing the task schedule
+04:51 - Comparing with GPT-4
+07:00 - Final Thoughts

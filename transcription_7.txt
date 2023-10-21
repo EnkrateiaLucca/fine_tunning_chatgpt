@@ -1,0 +1,462 @@
+Introduction
+0:00
+today we're looking at this paper three
+0:01
+of thoughts deliberate problem solving
+0:03
+with large language models now
+0:05
+essentially the authors developed this
+0:07
+framework that injects planning and
+0:09
+decision making capabilities into large
+0:11
+language models they do that by setting
+0:14
+up a system that leverages the
+0:16
+generation of what they call thought
+0:17
+sequences as well as self-evaluation in
+0:21
+order for the model to be able to
+0:23
+evaluate the quality of those thoughts
+0:25
+based on how much they progress the
+0:27
+problem forward it's really interesting
+Framework
+0:29
+because this framework allows the system
+0:31
+to reason over possible paths towards
+0:34
+solving a problem and have have a way to
+0:38
+pick one path that seems more promising
+0:41
+than the other as well as look ahead or
+0:43
+backtrack to make better decisions and
+0:45
+to adapt in different situations now
+0:47
+they start by comparing similar
+0:49
+prompting approaches like input output
+0:51
+prompt where you're just directly
+0:53
+prompting the model to solve the problem
+0:55
+giving a few Test instructions or some
+0:58
+few shot examples and then they talk
+1:00
+about Chain of Thought prompting where
+1:02
+the key idea is to introduce a chain of
+1:04
+thoughts between the input X and the
+1:06
+output Y where these thoughts are
+1:08
+language sequences that somehow move the
+1:10
+problem forward finally they talk about
+1:12
+Chain of Thought with self-consistency
+1:14
+where essentially you're sampling from a
+1:17
+chain of thoughts and then picking the
+1:18
+output that's the most frequent now the
+1:20
+authors argue that there are two
+1:21
+problems with existing approaches first
+1:23
+there's a lack of local exploration of
+1:26
+thought of thought sequences secondly
+1:28
+they argue that current approaches lack
+1:30
+the incorporation of decision making and
+1:32
+planning abilities nor do they have the
+1:34
+ability to backtrack or look ahead to
+1:36
+help them evaluate different options now
+1:38
+with this dot framework the author
+1:40
+divides the problem into four stages you
+1:43
+have the decomposition stage the
+1:45
+generation stage the evaluation stage
+1:47
+and the search stage now in the
+1:50
+decomposition stage the properties of
+1:52
+the problem are used to design and
+1:54
+decompose thought steps where each
+1:56
+thought should be small enough so that
+1:58
+llms can generate a diverse range of
+2:02
+possible thought sequences from that
+2:04
+original thought as well as big enough
+2:06
+so the large language models can
+2:08
+evaluate them meaningfully in terms of
+2:10
+how much they progress the problem
+Generation
+2:12
+forward in the generation stage you're
+2:14
+sampling from a distribution of possible
+2:16
+thoughts which works well When the
+2:19
+Thought space is Rich or you use a
+2:21
+proposed prompt to propose a set of
+2:22
+possible thoughts from that state then
+2:25
+you go into your evaluation stage where
+2:27
+you're going to evaluate the quality of
+2:29
+those thoughts in terms of how much they
+2:31
+get you closer to solving the problem
+2:33
+now in the evaluation State you can
+2:34
+either value each state independently or
+2:37
+you can use votes where the model is
+2:39
+going to be comparing States and picking
+2:42
+the one that seems more likely to
+2:44
+succeed and get you closer to a solution
+Evaluation
+2:46
+and then for the search stage the
+2:48
+authors argue that you can just plug in
+2:50
+play different search to research
+2:52
+algorithms and they chose the simplest
+2:54
+ones so they chose a breakfast search
+2:56
+and that first search now for the
+2:59
+results they did they use three data
+3:01
+sets sort of because they scrape much of
+3:04
+the data to the checking for like
+3:05
+improvised benchmarks or something like
+3:07
+that so the first one is game 24 where
+3:10
+you you're given four numbers and you
+3:12
+can use mathematical operations to reach
+3:15
+the number 24 and then they created a
+3:17
+creative writing task where essentially
+3:19
+the models are given four random
+3:21
+sentences and they have to form passage
+3:23
+of four paragraphs ending in those four
+3:25
+sentences and finally they also tested
+3:27
+in a set of crossword tasks here for
+3:29
+figure two they're showing how the
+3:31
+proposed prompt is proposing a set of
+3:33
+thought steps from that initial input in
+3:37
+this case 4 9 10 and 13. so then the
+3:39
+thought generation is just generating
+3:41
+possible options of what you can do with
+3:43
+these numbers given the problem in the
+3:45
+first place in this case the problem of
+3:47
+arranging a set of mathematical
+3:48
+operations around those numbers to
+3:50
+obtain the number 24 and then in the
+3:52
+value prompt the model is evaluating how
+3:54
+much each of those possible thoughts is
+3:57
+getting us closer to obtaining the goal
+4:00
+which is the number 24 and then as for
+Results
+4:02
+the results they show that the tree of
+4:03
+thought approach had a 74 success in
+4:06
+this case in this task in comparison to
+4:08
+the other methods there I think there
+4:09
+are some things that we could consider
+4:11
+about like how they use the other
+4:13
+approaches because they did some very
+4:15
+specific type of prompts for the i o
+4:18
+approach the Chain of Thought and
+4:19
+self-consistency but I thought 74 in
+4:22
+this game of 24 was a really cool result
+4:23
+now for the creative writing desk they
+4:26
+had this input where the would be like
+4:29
+to prompt the model to Riker in four
+4:31
+paragraphs ending those four sentences
+4:33
+and then the model would generate plans
+4:35
+of writing options and then the LM
+4:38
+itself would vote over those options to
+4:41
+decide which plan was best and then they
+4:43
+showed that the three or thought
+4:44
+approach had a higher coherence score
+4:45
+now for the crossword puzzle they argue
+4:48
+that they chose this task not not
+4:49
+because they wanted something that could
+4:51
+solve it better than anything else
+4:52
+because they they said that there are
+4:54
+other natural language approaches a
+4:56
+natural language processing approaches
+4:57
+that could do this better but they
+4:58
+wanted to show that the more although
+5:00
+had General capabilities in terms of
+5:02
+problem that involves looking ahead
+5:04
+making plans deciding having to go back
+5:07
+Etc because the crossword puzzle is a
+5:09
+problem that involves somewhat
+5:10
+deliberate reasoning and looking ahead
+5:13
+backtracking adapting and then they show
+5:16
+that you know the the true thought
+5:18
+approach would propose thoughts based on
+5:20
+the input to get the crossword puzzle
+5:22
+right and then use something like a
+5:24
+search algorithm like DFS in order to
+5:27
+search the space of possible options and
+5:29
+then have a state evaluator classify
+5:32
+each of those options with something
+5:34
+like sure impossible maybe in terms of
+5:37
+how much it would progress the problem
+5:39
+forward and solve the crossword puzzle
+5:40
+they claim that the tot approach
+5:43
+improved significantly all the metrics
+5:46
+with comparison to the other approaches
+5:48
+and they had a success rate of 60
+5:50
+finally arguing that such an improvement
+5:53
+is not surprising given that I O and cot
+5:55
+lack mechanisms to try different Clues
+5:57
+and make changes to decisions or
+5:59
+backtrack track which is something that
+6:00
+this approach has now they finish up by
+6:03
+talking about related work where they
+6:04
+argue that the three of thought
+6:05
+framework extends existing Planning
+6:07
+formulations by considering multiple
+6:09
+potentially feasible plans
+6:11
+simultaneously at each problem-solving
+6:13
+step and proceeding with the most
+6:14
+promising ones then they finish up by
+Related Work
+6:17
+talking about how this approach is
+6:19
+modular and flexible adaptable and
+6:22
+despite the fact that you need more
+6:24
+resources like you know the cost of the
+6:26
+gpt4 API to run an approach like this uh
+6:30
+they argue that their modularity allows
+6:33
+you to customize the performance and
+6:35
+cost trade-off finally they also argue
+6:37
+that tot improves interpretability which
+6:39
+is a big topic right now because of
+6:40
+alignment and they finish up talking
+6:43
+about this idea of system one and system
+6:44
+2 where the contest of the three or
+6:46
+thought framework the associative system
+6:48
+one can be beneficially augmented by
+6:50
+System 2 based on searching a tree of
+6:52
+possible paths to the solution of a
+6:53
+problem so you had system one generate a
+6:56
+set of possible options and then system
+6:58
+two B this kind of search over that
+7:01
+space to find one that better reaches
+7:05
+the solution but yeah overall I really
+7:06
+like this paper I think this approach is
+7:08
+quite interesting I think the the
+7:10
+arguing for problem solving like framing
+7:15
+problem solving as three search over a
+7:18
+combinatorial space of possible states
+7:21
+that will get you to the solution it's
+7:22
+not exactly a new approach which is
+7:24
+something that the authors comment on
+7:26
+the beginning that they inherited this
+7:28
+approach from Newell and that's
+7:31
+something that's not new I think one of
+7:33
+the main key contributions of this paper
+7:35
+is this ability to self-evaluate through
+7:38
+this combination of proposing possible
+7:40
+options and then heuristically searching
+7:43
+through the best ones by evaluating
+7:46
+which ones get you closer to the
+7:47
+solution and the way they do the
+7:49
+evaluation by using this by using a
+7:52
+mechanism where the model is reasoning
+7:56
+over potential States you're leveraging
+7:59
+the yellow capabilities to not only
+8:02
+generate options to solve the problem
+8:04
+but to evaluate their quality and then
+8:07
+move the problem forward and I think
+8:09
+this approach is really cool so thanks
+8:11
+for watching don't forget to like And
+8:12
+subscribe and see you next time cheers

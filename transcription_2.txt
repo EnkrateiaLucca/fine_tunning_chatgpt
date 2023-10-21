@@ -1,0 +1,140 @@
+0:00
+in this video you're going to learn how to build  a simple PDF summarization app okay to get started  
+0:05
+let's set up our Imports so first we're going  to import gradu to have the app which is going  
+0:12
+to be the framework that we're going to use  to actually build the actual app then we're  
+0:16
+going to use Link Chain to do the summarization  stuff here I'm importing open AI to access the  
+0:21
+large language model and the prompt template  to do custom prompts for the summarization  
+0:27
+then we're going to set up a character we're  going to import character splitter which we're  
+0:31
+going to use to split the text document into a  PDF into text chunks then we're going to load  
+0:39
+the summarization chain from link chain and the  pi PDF loader to load the PDF so now I'm going  
+0:46
+to be setting up the large language model from  an open AI this is essentially charger PT and  
+0:51
+I'm setting temperature to 0 to be as precise as  possible and I'm setting up the text splitter to  
+0:58
+split the document into chunks now we're going  to do two functions for this one to summarize  
+1:03
+the PDF and one to do custom summaries so first  we're going to be setting up the summarize PDF  
+1:09
+function which is going to take in the PDF file  path and a custom prompt which is going to be an  
+1:15
+empty string if I'm not doing a custom summary  but if I'm doing a custom summary this is going  
+1:20
+to carry that custom prompt then inside this  function I'm going to load the PDF using the pi  
+1:27
+PDF loader class then I'm going to load and split  the documents that I just I loaded the PDF with  
+1:35
+loader now I'm splitting that into chunks and I'm  going to save that to a variable called Docs then  
+1:40
+I'm going to set up a summarization chain with  the load some rise chain function from link chain  
+1:46
+and I'm going to set the Ching type to map  reduce there are many ways to do this there's  
+1:52
+like the refine method there are a few chain  types that you can experiment with but I found  
+1:56
+that this one works pretty well and then we're  going to run our summarization on the document  
+2:02
+and here I'm setting up a simple if where  if the custom prompt is not an empty string  
+2:11
+I'm going to do a custom summarization so that  means what that means that I'm gonna get the  
+2:18
+custom prompt from the keyword argument in the  function and I'm going to build my prompt template  
+2:26
+using the prompt template class from link chain  I'm fitting in the prompt template that I built  
+2:33
+using the custom proc that I fed to this function  and I'm setting input variable Stacks which are  
+2:39
+going to be the uh essentially is what this  function is going to be taking in as the custom  
+2:45
+prompt and placing it um placing it as the text to  summarize then I'm going to summarize the content  
+2:55
+and in the load summarization chain I'm going  to map The Prompt that I just built to that low  
+3:03
+summarization chain function so this variable  goes into here so that this thing understands  
+3:08
+that it has to do a custom summary then I'm just  gonna run my custom summarization and that's it  
+3:17
+finally here if there's no custom prompt I'm  just gonna set custom summary as an empty  
+3:26
+string because this function returns both  a regular summary and a customized summary  
+3:32
+now essentially before I had this as a separate  function like the custom summary like this but I  
+3:40
+didn't really like this approach so although it's  here we're not going to be using this function  
+3:47
+and finally what I'm going to be doing is I'm  going to define a main function where we're  
+3:51
+going to actually build the app which will have  as a backend this function that's going to be  
+3:56
+doing all the summarization for us so to build  the actual app we have to set up our inputs and  
+4:01
+outputs so the input is going to be the PDF  file path as a string so I'm going to feed it  
+4:07
+to a text box in gradu then I'm going to set up  an input for the custom prompt which is going to  
+4:14
+be the same thing a text boxing radio and then I'm  going to set up the output as the output summary  
+4:20
+variable which is also going to be a text box  where it's going to contain the actual summary  
+4:26
+and then an output custom summary which um  I think I'm not going to be using this one  
+4:34
+yeah so I did this a few versions and now I'm  just going through the line by line with the  
+4:40
+with the code that I built before but [Music] um  now what I'm doing is I'm setting up a nice face  
+4:47
+variable which um takes in a radio interface  class and then it feeds the function summarize  
+4:55
+PDF which is the function that we built here  then it's setting up inputs and outputs so as  
+5:01
+inputs it's a list with the input to the PDF  file path and an input to the custom prompt  
+5:07
+which is a just the text defining the custom  prompt that we want and as an output we have  
+5:13
+output summary and output custom summary which  are right here they're going to be the text boxes  
+5:22
+that are going to be storing the outputs from the  summarize PDF remember that summarize PDF function  
+5:28
+is returning a regular summary and a custom  summary if the custom prompt is fed to this  
+5:34
+function custom prompt I'm sure there are better  ways to do it but this was the the way that I  
+5:40
+found worked the best then I'm going to launch my  app and that's pretty much it now I'm just saying  
+5:48
+um now I'm just going to run the main function and  let's test this out so I already I already tested  
+5:55
+before so it's already working here but let's test  it again and see if everything is working great
+6:03
+okay so now I click the link with the URL  okay that looks good now what we're going  
+6:10
+to be doing is I'm going to get a path for a  PDF this is something that before people had  
+6:16
+struggled with regarding the finding  the path to the PDF so I'm just gonna
+6:25
+seed PDF file path right here and then I'm  not going to give a custom prompt I'm just  
+6:32
+going to submit this file path and now it's  running so it's going to take a few seconds  
+6:36
+and once I think usually in my machine which is  not exactly a super amazing machine it takes a  
+6:44
+little bit a little while but boom there we  go this paper introduces video Transformer  
+6:51
+pre-trained video model that captures semantics  and structure of instructional videos it's  
+6:54
+evaluated on six Downstream tasks including  step classification mistake step detection  
+6:59
+etc etc now we can cross check with the actual  paper and this is the paper learning and  
+7:05
+verification of test structure instructional  videos video task former is the name of the  
+7:11
+model that they developed so this summary  is perfectly aligned with the actual paper  
+7:16
+and that's it that's how you build a very simple  PDF serverization app using radio and linking if  
+7:24
+you like this video don't forget to like  And subscribe and see you next time cheers

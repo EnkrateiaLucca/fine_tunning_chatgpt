@@ -1,0 +1,391 @@
+Intro
+0:00
+all right so today we're going to be
+0:01
+building the automation for daily
+0:03
+scheduling so scheduling your to-do list
+0:05
+for today essentially the idea is to
+0:07
+grab a bunch of tasks from a database of
+0:10
+tasks that you have to do and then you
+0:12
+know filter them according to some
+0:13
+parameters and create a tailored
+0:17
+schedule for that day and the tasks that
+0:20
+you have to do sorry about my voice but
+0:22
+I was cheering for a friend of mine who
+0:24
+went to fight in an MMA event and now I
+0:27
+lost my voice so it is what it is so
+0:29
+let's get started so for the first task
+0:31
+of automating daily scheduling we're
+Tasks Database
+0:33
+going to be based on this idea of a task
+0:37
+database where I have a test database
+0:39
+composed of a task a type content
+0:43
+creation personal work learning Etc it
+0:45
+did an effort which is an estimation of
+0:48
+the number of hours that takes to
+0:49
+complete a task then a date which is a
+0:52
+deadline for the task if the task has a
+0:55
+deadline finally the task the database
+0:58
+will also have a priority column
+1:00
+indicating the level of importance of
+1:02
+the task where one means very low
+Imports
+1:05
+priority and five means high priority
+1:07
+okay perfect okay guys so first things
+1:10
+first we're going to import our
+1:11
+dependencies so we're going to be
+1:12
+importing open AI to access the
+1:14
+chargeable TPI then we're going to have
+1:16
+a few other Imports to handle some
+Setting up the ChatGPT API
+1:17
+processing then what we're going to do
+1:19
+is we're going to first Define the get
+1:21
+response function to access the
+1:22
+chargeable TPI so here we're essentially
+1:24
+just using the open AI API and then the
+1:26
+check completion class and the create
+1:28
+method to access in this case we're
+1:30
+going to be accessing GPT 3.5 turbo but
+1:34
+I actually want to test with both models
+1:36
+to see which one works the best then
+1:37
+we're going to set up the message for
+1:40
+the system and in this case I'm just
+1:42
+saying you're helpful research and
+1:44
+programming assistant and then I will
+1:47
+send the prompt question which will be
+1:49
+fed to the function as an argument then
+1:51
+I'm going to respond return the response
+Setting the OpenAI API key
+1:53
+of the model so pretty boilerplate and
+1:55
+I'm going to set up the open air API key
+1:57
+then I'm going to read a CSV file with
+1:59
+the database that I exported from notion
+Loading Tasks DB from csv file
+2:02
+so essentially I'm exporting this
+2:04
+database to a CSV file then I unzip it
+2:07
+and save it to a file called Tesla CSV
+2:11
+finally I'm gonna get today's date which
+2:14
+I'm going to be using to feed the model
+2:17
+with the information of which day is
+2:18
+today so that it can do proper
+2:20
+scheduling of the tasks according to the
+2:22
+day and then I'm going to transform that
+2:25
+task to a string because here this is an
+2:29
+interesting part I'm not going to be
+2:30
+using link chain or I'm not going to be
+2:33
+vectorizing the test database I wanted
+2:36
+to do something a little bit simpler and
+2:38
+so I'm just going to feed the string
+2:40
+because the string is not going to be
+2:41
+that grip that big with this amount of
+2:44
+information because I don't want to do
+2:45
+like a super planning of like a month I
+2:48
+just want to do like a basic
+2:49
+daily planning of scheduling some tasks
+Main prompt for ChatGPT
+2:53
+finally we're going to Define our prompt
+2:55
+now here is where it gets interesting so
+2:58
+the prompt is going to be consider that
+3:00
+today is someday X then write a test
+3:03
+schedule for tomorrow consider the
+3:06
+following effort column represents
+3:08
+projection of hours to complete the task
+3:11
+the goal should be to focus more on work
+3:13
+and content creation but do other tasks
+3:16
+if there is time respect to priority
+3:18
+levels and make this schedule as
+3:19
+optimized as possible tasks with
+3:22
+deadlines should be performed before or
+3:23
+at the day of the deadline and the
+3:25
+outperformance should be start time and
+3:27
+time task and the task database is this
+3:30
+so essentially I give as much context as
+3:33
+I can to the model
+Writing Output to file
+3:34
+and that I print the result of the term
+3:36
+Loop
+3:37
+and that's pretty much it I also want to
+3:40
+save it as a schedule so let's just save
+3:44
+it as daily schedule.xc
+3:49
+I'm going to access and then put
+3:52
+now we're going to say after right and
+3:55
+then I'm going to say
+3:57
+ah
+3:58
+we're going to take this as out of the
+4:00
+model so I'll put output schedule secret
+4:04
+to this and then we're going to print it
+4:07
+and we're also going to write a file
+4:09
+beautiful and that's pretty much it so
+4:11
+let's give it a test run to this version
+4:14
+of the automation automating the
+4:16
+schedule let's take a look alright cool
+4:18
+so we got our response back
+Visualizing the task schedule
+4:21
+so let's take a look let's save this
+4:23
+actually I'm gonna rename this as daily
+4:26
+schedule
+4:27
+gp3 uh 3.5 turbo so this is the output
+4:31
+that I got so 9 to 10 30 finish
+4:33
+remaining minor that's work okay that
+4:35
+makes sense this is a work task okay 12
+4:38
+to 1 say your health Matrix I'll cry
+4:41
+I'll cry and then to five or last up
+4:43
+words yeah it had all sorts of tests in
+4:44
+the database note that the priority
+4:46
+levels have been considered in all the
+4:48
+tasks have been scheduled okay so this
+4:50
+looks pretty good but now what I would
+Comparing with GPT-4
+4:51
+like to do is compare that to be using
+4:54
+gpt4 so I'm Gonna Save the same thing
+4:57
+and I'm gonna say with gpt4 and I'm
+5:01
+gonna run this again so I'm going to
+5:03
+save this and run it again let's take a
+5:05
+look to see what it looks like all right
+5:06
+perfect so we got a response and this is
+5:10
+actually looking pretty good so we have
+5:13
+this format that I asked for the only
+5:15
+thing the model got around was the date
+5:17
+but that's my mistake because I fed it
+5:19
+in the wrong format yeah I should have
+5:23
+said month should have said month day
+5:26
+year that's why we can assess the output
+5:29
+record the short Monday Tuesday video
+5:31
+and then there's some learning tasks
+5:33
+okay I mean the model is assuming that
+5:35
+I'm going to be working from 8 AM to 10
+5:37
+o'clock but that's okay
+5:39
+and now we can take a look at both
+5:42
+schedules side by side so one thing that
+5:46
+I notice I like the concisiveness the
+5:48
+con how concise the output from gpd4 is
+5:51
+so I like that
+5:54
+um
+5:55
+I feel like in terms of for example work
+5:59
+presentation is a one hour task in
+6:02
+YouTube before said that it would take
+6:05
+two hours while let's see well this was
+6:09
+a task that actually gbt 3.5 didn't even
+6:12
+consider now one thing I didn't like was
+6:15
+that the um
+6:17
+priorities don't seem to be that
+6:19
+straight because
+6:21
+the most important task was
+6:25
+uh the most important task was
+6:29
+here exactly
+6:30
+so there was this one that was a big
+6:32
+task
+6:34
+which was to do some modifications on an
+6:37
+API thing that I have to do for work
+6:39
+and then finishing build changes then
+6:42
+finishing remaining minor tasks
+6:44
+but it's okay I mean the the fact that I
+6:47
+had an effort of 12 hours for the big
+6:49
+task makes sense that it would not
+6:51
+schedule when I don't have the time to
+6:53
+complete it so I would say that this is
+6:55
+a pretty cool application of charger PT
+6:58
+and using the API I think that one of
+Final Thoughts
+7:00
+the ideas that I had was to connect this
+7:01
+with notion and I bet that you can do
+7:03
+that with zapier and stuff but I can
+7:05
+also do it with python code which is
+7:07
+great because then you can have this
+7:09
+running and then you just you know
+7:11
+create a schedule for the day and you
+7:13
+just go through the day and you don't
+7:14
+have to think about it so this is a
+7:16
+pretty good example of an application
+7:18
+using charge BT that's it hope you guys
+7:20
+like this video if you like it don't
+7:21
+forget to like And subscribe and see you
+7:23
+next time cheers

@@ -1,0 +1,198 @@
+0:31
+find the best prompt to create optimal
+0:34
+Inky flashcards use a combination of
+0:36
+chargeptee Lan ching and some simple
+0:39
+prompt engineering experiments to
+0:41
+automate the process of creating Anki
+0:43
+flash cards now a while back I used
+0:45
+church PT to automate this process of
+0:48
+creating flashcards with a simple crop
+0:50
+like create Inky flashcards from this
+0:52
+piece of text now the problem with this
+0:54
+approach is that you might run into
+0:56
+problems like a reliable questions and
+0:58
+answers the Fletcher might not reflect
+1:01
+all the information present in the text
+1:02
+and things like repeated questions which
+1:05
+is something I heard from this person
+1:07
+that commented on the channel to bypass
+1:09
+these issues what I decided to do is use
+1:11
+a concept from prompt engineering called
+1:13
+decomposition where essentially to
+1:15
+facilitate the process for the large
+1:17
+language model you break down the
+1:19
+problem into subtasks in this case I
+1:22
+broke it down into two simple tasks
+1:24
+first I would like to extract all the
+1:26
+relevant information from a giveaway
+1:28
+piece of text and then based on those
+1:30
+extracted facts create the questions and
+1:33
+answers that I could then import to enki
+1:35
+I started by extracting all the facts
+1:38
+from a piece of text using gpt4 the most
+1:41
+advanced large language model to date
+1:43
+from open AI which served to me as a
+1:45
+reference for a correct answer but my
+1:47
+ultimate goal was to actually use chat
+1:50
+GPT for this automation since it's a
+1:52
+much faster model and much cheaper to
+1:54
+use when we're using the actual API to
+1:57
+do that I needed to make sure that the
+1:59
+answers obtained with T would be
+2:01
+reliable so I also prompted gbt4 to
+2:04
+create a set of prompt candidates that I
+2:07
+would then test using the actual
+2:09
+chargept API so I created a set of
+2:11
+prompt candidates and also added a few
+2:13
+more with variations and I ended up with
+2:15
+a set of 25 prompt candidates so then I
+2:19
+used Lane chain to create a set of
+2:21
+prompt templates that I would use to
+2:23
+programmatically query the charger TBI
+2:27
+on a given text so after doing that I
+2:30
+had the following problem to solve how
+2:31
+can I evaluate the quality of the
+2:33
+outputs from church PT without manually
+2:36
+checking each fact individually and
+2:38
+comparing it to the original article so
+2:40
+my solution to this was to use gpd4 as a
+2:43
+kind of a judge that would give a score
+2:45
+to each of the outputs of the thing
+2:47
+which hbt in order to rank them
+2:50
+according to how well they extracted
+2:53
+effects from the text now based on these
+2:55
+scores I first generated a part chart to
+2:57
+show all these scores from all the
+2:59
+different pumps that I used and then I
+3:01
+just selected the best prompt given the
+3:04
+scores obtained using gpt4 now with this
+3:06
+best prompt in mind my second task was
+3:09
+to actually create the Yankee flashcards
+3:10
+the thing here is that creating the
+3:13
+actual questions and answers based on
+3:14
+facts is a much simpler task for chech
+3:17
+PT than actually extracting the facts so
+3:19
+I came up with this prompt that actually
+3:21
+worked quite well and I created
+3:23
+something called a sequential chain
+3:25
+using linking in order to concatenate
+3:28
+both of these prompts into one automated
+3:31
+process that I could just run like I'm
+3:33
+showing here after running I was quite
+3:35
+satisfied with the results and I
+3:36
+consider this task finished now I really
+3:38
+like this approach where we can
+3:40
+integrate space repetition systems with
+3:42
+large language models and I think
+3:44
+there's a lot of potential to explore in
+3:46
+these kinds of augmented Integrations
+3:48
+now I wasn't 100 sure regarding how I
+3:51
+was using gpt4 to evaluate the metrics
+3:54
+because that could view problems but
+3:56
+since I didn't know exactly which was
+3:58
+the best approach to take I decided to
+4:00
+just go with this one and see what
+4:02
+happens for the future I intend to
+4:04
+explore more these use cases of large
+4:06
+language models as tools to automate
+4:09
+lower level processes if you like this
+4:11
+video don't forget to like And subscribe
+4:13
+and see you next time cheers

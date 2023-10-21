@@ -1,0 +1,15 @@
+📚 Chapters
+00:00 - Introduction  
+00:01 - Setting up the environment  
+00:07 - Importing modules and API authentication  
+00:22 - Cloning and loading the repository  
+01:53 - Loading the files in the repository  
+02:14 - Chunking the files  
+03:00 - Vectorizing the documents  
+04:07 - Creating a dataset and adding documents  
+04:53 - Accessing the database  
+05:23 - Setting up the retriever  
+06:15 - Setting up a chat with OpenAI  
+07:05 - Querying the codebase  
+08:02 - Printing the answers  
+08:46 - Conclusion

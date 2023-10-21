@@ -1,0 +1,8 @@
+📚 Chapters
+00:01 - Introduction to the PDF Summarization App
+00:30 - Setting up Imports and Loading Language Model
+01:03 - Creating Functions for Summarizing PDFs
+03:27 - Defining the Main Function for Building the App
+04:02 - Setting up Inputs and Outputs in the Gradio Interface
+05:13 - Launching the App and Testing
+07:05 - Conclusion and Next Steps

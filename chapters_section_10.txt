@@ -1,0 +1,16 @@
+📚 Chapters:
+00:00 - Introduction and Update
+00:16 - O'Reilly Training Course Experience
+00:48 - Research on Building LLM Agents
+01:29 - Overview of Autonomous AI Agents Paper
+02:10 - Examples of LLM-based Agents in Research
+03:01 - Components of LLM Agents: Memory and Planning
+04:40 - Action Space and Strategies in Planning
+05:40 - Challenges in Benchmarking LLM Agents
+06:31 - Upcoming Projects and Researcher Agents
+06:54 - Interest in Lamma 2 and Open Source Models
+07:22 - New Workspace and Design Plans
+08:45 - Using AI for Rendering Floor Plans
+09:51 - Future of AI in Architecture and Design
+10:36 - Channel Goals and Future Content
+11:18 - Upcoming Training Courses and Conclusion

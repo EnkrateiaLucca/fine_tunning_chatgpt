@@ -1,0 +1,472 @@
+0:00
+in this video you're going to learn how
+0:01
+to ask questions to a code base using
+0:03
+link chain let's go so first things
+0:05
+first to set up this environment you're
+0:07
+going to need to install the um a few
+0:11
+packages that you know are just common
+0:13
+when you're using linking so in this
+0:15
+case link change Deep Lake open Ai and
+0:18
+tick token
+0:19
+so then for our Imports we're going to
+0:22
+import OS we're going to import get pass
+0:24
+which actually we're not going to be
+0:25
+using because we're going to do the
+0:26
+authentication with the apis just by
+0:29
+setting the environment variables we're
+0:31
+going to then import open AI embeddings
+0:33
+to do our embeddings of the code base
+0:36
+that we're going to be loading we're
+0:38
+going to do the vectorization using deep
+0:40
+lake which is the approach they used in
+0:42
+the documentation
+0:43
+then you're gonna set up your active
+0:46
+Loop token API key which you can do by
+0:50
+just going to the Blake website setting
+0:53
+up an account and acquiring your API key
+0:57
+here you could also set up your open AI
+1:00
+API key I already have mine as an
+1:02
+environment variable in my system and
+1:05
+then we're going to load the embeddings
+1:08
+for using the open air embeddings class
+1:13
+then what we're going to be doing is
+1:14
+we're going to clone the repository that
+1:16
+we're interested in in this case I'm
+1:18
+cloning a repository called motion
+1:20
+canvas which is a typescript framework
+1:22
+to generate animations through code and
+1:25
+I'm really interested in this framework
+1:26
+because I'm learning how to code
+1:27
+animations so I but there's like a lot
+1:31
+of things in this specific repo they're
+1:33
+a bit confusing and a bit complicated so
+1:36
+even if you follow their actual tutorial
+1:39
+so what I'm doing here is I'm just gonna
+1:41
+see fling Ching maybe can help me
+1:43
+through this question answering
+1:46
+setup
+1:48
+okay so following
+1:50
+um
+1:51
+moving on we're going to be loading all
+1:53
+the files inside the repo we're going to
+1:55
+be using the text loader to do the
+1:58
+loading of the tax documents which will
+2:01
+be the files in the code base
+2:03
+we're going to set up the root directory
+2:05
+as the directory that contains the um
+2:08
+code that we cloned
+2:11
+then we're going to set up a empty list
+2:14
+for storing the docs that we're gonna
+2:17
+load from the code base then we're going
+2:20
+to Loop through that code base and for
+2:22
+each of the files we're going to try to
+2:23
+load it with the text loader
+2:26
+and then
+2:28
+um append that at that two hour uh docs
+2:32
+list which will be a list with a bunch
+2:34
+of document objects that will be the
+2:36
+result of loading each file with this
+2:37
+text loader
+2:39
+then if that doesn't work we're going to
+2:41
+set up an exception and we're gonna move
+2:43
+on all right perfect so now after that
+2:47
+what we're going to be doing is here I'm
+2:49
+just
+2:50
+um making sure that the docs list is
+2:53
+actually filled with documents so I'm
+2:55
+just printing the length of that list in
+2:58
+this case I have 1 321 files that were
+3:00
+loaded and if I came here and I did
+3:03
+something like okay so print
+3:06
+length of docs but then I showed you
+3:08
+guys what docs is it's just gonna be a
+3:11
+list full of document objects that
+3:14
+contains the files and the content of
+3:16
+the files from the code base
+3:18
+okay so then we're gonna chunk those
+3:21
+files and we're going to do that using
+3:23
+the character text Splitter from link
+3:25
+chain and that's as easy as just calling
+3:28
+character text splitter we're gonna set
+3:30
+up some chunk size and some chunk
+3:33
+overlap it's important to note that for
+3:34
+this example I didn't tune none of these
+3:37
+parameters but you can do that yourself
+3:39
+if you think that it's not working for
+3:41
+your particular use case
+3:43
+then we're going to split the documents
+3:46
+from the docs and save that to a
+3:49
+variable called texts
+3:51
+so then here it was creating all the
+3:53
+chunks with different sizes from all
+3:56
+those documents from the list
+3:57
+and then once we've done that now it's
+4:00
+the vectorization bit so now we're going
+4:02
+to set up
+4:04
+um we're going to create a public data
+4:07
+set although right now I'm not 100 sure
+4:09
+it's public just because I'm not setting
+4:11
+public here because I think that they
+4:13
+removed this parameter from a later
+4:16
+release of the Blake I don't know
+4:19
+however we're just going to be setting
+4:22
+up the Blake and then we're going to set
+4:24
+up the data set and the data set is
+4:25
+going to be based on this
+4:28
+um the code base that we're trying to
+4:30
+that were that we embedded or indexed
+4:32
+then we're going to add all the
+4:34
+documents that we just chunked
+4:36
+here
+4:39
+and
+4:40
+that is pretty much it that's pretty
+4:43
+much we get what we got to do to do the
+4:46
+vectorization part so then it's going to
+4:48
+be doing all the indexing
+4:50
+and once we are done
+4:53
+we can then access it so now I'm
+4:56
+accessing that database
+4:58
+and
+5:00
+now here I'm accessing the database and
+5:03
+once we've accessed the database it's
+5:05
+going to print something like the data
+5:06
+that can be visualized in Jupiter
+5:07
+notebook Etc uh this data set was loaded
+5:11
+successfully it is saved in whatever
+5:14
+Place
+5:15
+etc etc and then it's going to give some
+5:17
+meta information about the data set like
+5:19
+the size of the embedding and stuff like
+5:20
+that
+5:21
+and now we can set up our retriever
+5:23
+which is going to be the thing that's
+5:25
+going to allow us to ask questions to
+5:27
+the code base
+5:29
+yep so for the retriever we can set up
+5:33
+some search keyword arguments like the
+5:36
+distance metric which in this case if
+5:38
+I'm not mistaken this is cosine
+5:39
+similarity
+5:41
+and then the number of things that it
+5:43
+fetches if I'm not mistaking there's a
+5:45
+hundred uh and marks more marginal
+5:48
+relevance to be 100 honest I'm not sure
+5:50
+what it is
+5:52
+uh but okay so this is I think this
+5:55
+pretty much that this will return the
+5:58
+top 10K answers and then from those it
+6:02
+will give the the best one I think it's
+6:04
+something like that not a hundred
+6:06
+percent sure
+6:07
+okay but we set up these search keyword
+6:09
+arguments for the retriever and then we
+6:13
+can now just set up the chat with open
+6:15
+AI so that we can ask the questions and
+6:17
+then just get the responses so we're
+6:20
+gonna load Channel open a chat open AI
+6:22
+from the linkchang.chat models and we're
+6:25
+gonna load the conversational retrieval
+6:28
+chain
+6:29
+from link Chang dot chains so we set up
+6:31
+our model in this case I'm loading
+6:33
+directly gpt4 you could load gp3 3.5
+6:37
+turbo like hbt it's up to you and you
+6:41
+see what works best for your case
+6:43
+and then we're going to set up the
+6:45
+conversational retrieval chain and then
+6:47
+we're gonna call the from llm method and
+6:51
+we're going to feed that model that we
+6:53
+just loaded here and the retriever that
+6:55
+we just set up in the previous cell
+6:58
+right here
+7:00
+so now with this we have all we need to
+7:03
+start querying
+7:05
+to start querying the code base so I'm
+7:08
+going to set up a list
+7:10
+with all the questions that I have for
+7:11
+the code base in this case I just asked
+7:13
+choose simple questions like how to
+7:14
+create an animation of a moving Square
+7:16
+motion canvas and what are the core
+7:20
+components to create an animation in
+7:22
+motion canvas
+7:23
+uh and when I and once I've
+7:28
+set up these questions I can now set up
+7:31
+an empty list that will store the chat
+7:33
+history between me and the code base
+7:35
+throughout this conversation
+7:37
+and then for each question in my
+7:40
+questions list I'm gonna
+7:42
+query the database I'm going to query
+7:45
+that retriever chain
+7:46
+and then I'm gonna append the question
+7:51
+and the answer to my chat history
+7:54
+in print the out print the question and
+7:56
+print the answer so it's as simple as
+7:58
+that and now we can I can run this
+8:02
+and get the response
+8:06
+oh sometimes it takes a little bit to
+8:08
+load I'm sorry to to run
+8:12
+so I'm going to do a magic trick
+8:14
+children or I guess so it took a while
+8:17
+but here we have our answers so it went
+8:21
+as far as output the entire code that I
+8:24
+need to do what I wanted to do in motion
+8:26
+gavis for my first question and then for
+8:29
+the second question it's it discusses
+8:32
+the main components of the motion motion
+8:35
+camera so these are sets of elements
+8:37
+let's play on the screen along with
+8:38
+animations Etc by combining these
+8:40
+components you can create complex and
+8:41
+informative Vector animations all right
+8:44
+cool we can see that in a text editor
+8:46
+so this was the question what are the
+8:49
+components to create an animation then
+8:51
+the answer
+8:52
+to create you need the following group a
+8:54
+project configuration project yeah
+8:56
+that's all correct array of scenes
+8:59
+that's correct scenes yeah that's
+9:02
+perfect
+9:03
+so it works it's amazing so I'm very
+9:06
+satisfied with this answer all right
+9:08
+guys that's it that's how you query a
+9:10
+code base using link chain if you like
+9:11
+this video don't forget to like And
+9:13
+subscribe and see you next time

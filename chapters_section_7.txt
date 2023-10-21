@@ -1,0 +1,26 @@
+📚 Chapters
+00:00 - Introduction
+00:01 - Overview of the Research Paper
+00:14 - The Idea of Thought Sequences
+00:29 - System's Reasoning and Decision-Making Capabilities
+00:49 - Comparing Different Prompting Approaches
+01:02 - Chain of Thought Prompting
+01:14 - Chain of Thought with Self-Consistency
+01:21 - Problems with Current Approaches
+01:43 - Decomposition Stage
+01:50 - Generation Stage
+02:10 - Evaluation Stage
+02:34 - Search Stage
+02:59 - Research Results
+03:10 - Game 24 Task
+03:19 - Creative Writing Task
+03:27 - Crossword Tasks
+04:00 - Evaluating the Tree of Thought Approach
+04:26 - Creative Writing Task Results
+04:48 - Crossword Puzzle Task Discussion
+05:39 - Success Rate of Tree of Thought Approach
+06:03 - Related Works
+06:19 - Modularity and Flexibility of the Approach
+06:37 - Improved Interpretability
+06:43 - System One and System Two Discussion
+07:06 - Conclusion

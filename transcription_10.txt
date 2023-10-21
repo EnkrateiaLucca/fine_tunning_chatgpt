@@ -1,0 +1,595 @@
+Introduction and Update
+0:00
+what's up guys so in this video I want
+0:02
+to do a quick update on some stuff that
+0:04
+I've been doing over the past two weeks
+0:05
+so I took a break from YouTube for a
+0:07
+couple weeks to work on some personal
+0:09
+projects and I want to share some of
+0:11
+these projects with you specifically
+0:13
+I've done I did the like training course
+O'Reilly Training Course Experience
+0:16
+for O'Reilly my first course doing my
+0:19
+first live training course for them and
+0:21
+it went amazing the light training was
+0:24
+about building text-based applications
+0:26
+with the judge TPI and link chain and I
+0:29
+mean we had over 275 attendees live and
+0:34
+I mean I got hundreds of questions great
+0:36
+feedback uh so it was just an amazing
+0:39
+experience and we're gonna do another
+0:41
+one in October on the 20th of October
+0:45
+and I'm Gonna Leave a link in the
+0:46
+description if you want to join that you
+Research on Building LLM Agents
+0:48
+get and besides that I've been getting
+0:50
+in building LOL agents I've been
+0:53
+researching a lot about how to build llm
+0:55
+agents but not only that researching a
+0:57
+lot about the framers researching a lot
+1:00
+about how to formalize building agents
+1:04
+and understanding what the problem is
+1:07
+when we're kind of like attaching large
+1:10
+language models to tools and asking the
+1:15
+question okay how can I make this thing
+1:18
+do useful things reliably right this is
+1:21
+a really tough
+1:22
+it's a really tough thing to do and
+1:27
+um recently during my vacation I read
+Overview of Autonomous AI Agents Paper
+1:29
+this 32 Pages paper on a survey for
+1:32
+autonomous AI agents again I'll leave a
+1:34
+link in the description essentially this
+1:37
+paper was really cool because it kind of
+1:39
+gave me like a perfect overview of
+1:42
+everything that's going on in research
+1:44
+regarding building llm-based agents and
+1:47
+I want to share a few of these insights
+1:50
+with you guys because essentially it's a
+1:51
+survey that just covers a bunch of stuff
+1:54
+from you know how to think about these
+1:56
+agents what research is happening right
+1:59
+now or all these types of problems types
+2:02
+of applications of agents and stuff that
+2:04
+people have been doing for example they
+2:06
+give one example inside the paper of a
+Examples of LLM-based Agents in Research
+2:10
+chemistry researcher agent that
+2:12
+essentially was able to synthesize a new
+2:14
+molecule just using you know LMS plus
+2:18
+chemistry specific tools and I thought
+2:21
+that was one of the coolest Keepers I
+2:23
+think it's called Kim Crow I'll put a
+2:25
+link in the description for both the
+2:28
+survey paper and this chemistry agent
+2:30
+paper I thought it was amazing right in
+2:32
+this paper they talk about how you can
+2:34
+think about are the lens in terms of
+2:35
+these four basic components like a
+2:38
+profile so that's essentially how do you
+2:40
+kind of label what the agent is it can
+2:43
+be a researcher like a content creator
+2:45
+whatever you want
+2:47
+um and then they talk about okay so then
+2:49
+you can manually describe what the agent
+2:52
+is give it a profile like you're a
+2:54
+researcher your mathematician Etc or you
+2:57
+can have vanilla live the fine with the
+2:59
+agent is or you can do something called
+Components of LLM Agents: Memory and Planning
+3:01
+data set alignment so the second
+3:03
+component it's is memory and you know
+3:05
+when you're interacting with llm agents
+3:08
+you needed to have some sort of memory
+3:10
+some sort of ability to hold information
+3:12
+from past experiences and they talk
+3:16
+about what are the challenges there you
+3:18
+know they talk about something like
+3:19
+unify and hybrid memory and the types of
+3:22
+formats of memory and the types of
+3:24
+operations that you have to do and they
+3:27
+go into detail about that so that was
+3:28
+cool so then they go into planning so
+3:32
+these agents need to plan out their
+3:34
+actions before right remember that most
+3:36
+of the like really high performing
+3:38
+agents to date are essentially based off
+3:40
+this paper called react which is I'm
+3:43
+going to leave a link in the description
+3:44
+for this paper as well and it's a
+3:46
+essentially it's a paper about you know
+3:48
+how an llm uh how to like get the best
+3:52
+out of vanilla them by just having it
+3:56
+um interpolated like just put
+3:58
+planning in actions kind of like one
+4:01
+after each other so that it gets the
+4:04
+best performance by just having it
+4:06
+having it like okay so this is what I'm
+4:07
+gonna do and then it does and then it
+4:09
+rethinks and then it goes and does again
+4:11
+I mean this is a really cool fundamental
+4:14
+paper so planning is a key component of
+4:16
+these agents and uh they they talk a lot
+4:20
+about strategies in planning and types
+4:22
+of feedback that you can get during the
+4:24
+planning phase like you can have just
+4:26
+the model plan out its own tasks and
+4:28
+then execute them or without any
+4:31
+feedback or you can have feedback for
+4:33
+the planning and the quality of the
+4:34
+planning that the model will Define for
+4:36
+itself
+4:37
+and finally you have the action space
+Action Space and Strategies in Planning
+4:40
+which is actually they go into like
+4:43
+brilliant detail like this hierarchical
+4:45
+structure almost of a lot of stuff
+4:48
+related to how agents take actions in
+4:52
+the real world and essentially you know
+4:54
+you can have actions based off the tools
+4:56
+that the agents have right like
+4:57
+searching the internet uh searching
+5:00
+Google running code Etc but you can also
+5:03
+have actions based off the
+5:05
+self-knowledge of the agent
+5:06
+uh they go into a bunch of details about
+5:09
+like different things to think about for
+5:11
+example the action influence something
+5:14
+they call Action influence which is like
+5:16
+to analyze how a nation of an agent uh
+5:19
+has certain consequences certain you
+5:21
+know from when I do this what happens
+5:24
+what are the consequences to my action
+5:26
+for example if it does something on the
+5:28
+Internet what happens from there
+5:31
+stuff in that sense so that was kind of
+5:33
+interesting and I mean this paper is
+5:36
+full of cool stuff like for example
+5:37
+having tables for the benchmarks for
+Challenges in Benchmarking LLM Agents
+5:40
+these agents because essentially
+5:41
+benchmarking llm agents today is like a
+5:44
+big problem because you know in essence
+5:47
+you have
+5:49
+um you don't have any kind of structure
+5:51
+right now any kind of framework or
+5:52
+protocol or how to evaluate the quality
+5:55
+of these agents and it's also very hard
+5:57
+because the tasks that these agents are
+5:58
+supposed to do are very general so it's
+6:00
+very subjective in a specific sense
+6:03
+however they do mention papers like
+6:05
+agent bench which is a paper that just
+6:08
+try to defy this protocol and framework
+6:11
+for how to properly evaluate llm agents
+6:14
+and it's kind of nice because they have
+6:15
+a bunch of tasks and they're within
+6:17
+those tasks you can see you know and you
+6:20
+have many different ways of evaluating
+6:22
+uh Carl Black's things like reasoning
+6:25
+and problem solving capabilities
+6:27
+so this paper is quite interesting and
+6:29
+it got me thinking about doing a few
+Upcoming Projects and Researcher Agents
+6:31
+projects with these agents I already
+6:33
+started some and you guys are probably
+6:35
+going to see that in the very near
+6:36
+future essentially I want to build my
+6:39
+own researcher agents and you know the
+6:41
+different types of Agents related to
+6:43
+different things
+6:44
+and I think that would be a really cool
+6:47
+project to have in the channel
+6:49
+and the last thing was I've been getting
+6:51
+interested in La Machu which is the
+Interest in Lamma 2 and Open Source Models
+6:54
+recently released open source model by
+6:57
+meta where essentially you have a model
+7:00
+that you know Rivals Church B team
+7:02
+performance but it's completely open
+7:04
+source and you can download it to your
+7:07
+computer and essentially you have a
+7:09
+large language model that can do
+7:10
+whatever set up a server in my new
+7:12
+workspace which is actually a great
+7:15
+segue to my next topic of discussion
+7:18
+which is I've been over the last month
+New Workspace and Design Plans
+7:22
+and a half designing my new workspace I
+7:26
+kind of like I'm gonna assure you guys a
+7:28
+photo of what the space looks like right
+7:30
+now but it's actually just I have a
+7:31
+small office where I do the videos and
+7:34
+where I work and I want to change the
+7:36
+space to make it like not only better
+7:39
+for making YouTube videos but better to
+7:41
+work better to build stuff I've been
+7:43
+getting into electronics and you know
+7:45
+doing some kind of like you know maker
+7:48
+type projects so when I have a little
+7:49
+workshop inside my workspace
+7:51
+and this project has been really
+7:54
+interesting because it got me kind of
+7:56
+sketching a lot I've been trying to
+7:57
+learn how to draw for a while now and
+8:00
+I've been drawing kind of like I drew
+8:02
+out some designs for like the floor plan
+8:04
+of the workspace and it was really cool
+8:07
+because I've learned a lot about how
+8:10
+people in architecture designed their uh
+8:14
+you know do sketches for different
+8:15
+architectural designs and from that I
+8:20
+kind of like evolved to like more you
+8:22
+know slightly more formal floor Blends I
+8:26
+mean not really not really formal
+8:28
+because they they don't have like
+8:30
+specific measurements and stuff like
+8:32
+that but they're a little bit more like
+8:34
+structured and from that what I did was
+8:37
+I used a tool called relative Fusion
+8:39
+which I'll leave a link in the
+8:41
+description they're not sponsoring this
+8:42
+video by the way
+8:43
+and I really liked the video I really
+Using AI for Rendering Floor Plans
+8:45
+like the tool because essentially it
+8:47
+allowed me to render
+8:49
+my sketches so I have these floor plans
+8:53
+and I rendered them with AI using they
+8:56
+use control net they had these they have
+8:59
+this really cool radio
+9:01
+2 if you guys don't know what radio is
+9:03
+it's a framework for like quickly
+9:05
+building a machine learning apps and
+9:07
+it's kind of like streamlit but it's
+9:09
+like you know uh simpler and um you know
+9:12
+runs in the browser just like
+9:13
+streamlined it's pretty cool
+9:16
+um and it was quite I had a great
+9:19
+experience doing these uh renderings of
+9:21
+the sketches because they gave me kind
+9:23
+of like a visual
+9:24
+even not 3D but kind of 3D visual of
+9:28
+what the workspace would look like
+9:29
+according to different settings for my
+9:32
+floor plan designs
+9:34
+and I think that was really cool I would
+9:37
+like to do a video on like how to use AI
+9:40
+like how to use open source AI
+9:43
+to do projects like that I think that's
+9:45
+a really cool kind of Avenue that we're
+9:48
+going with these things now in mid
+9:50
+Journey For example now you can do
+Future of AI in Architecture and Design
+9:51
+sitting in the journey which is amazing
+9:53
+because you can you know generate
+9:56
+an image of like let's say uh like a an
+9:59
+office or a couch or whatever and then
+10:02
+you can select a small part within that
+10:04
+image of an office or a couch or
+10:06
+whatever and you can ask the model to
+10:09
+iterate on variations just for that
+10:12
+specific region that you selected
+10:14
+so there are a lot of tools for you know
+10:17
+architecture and design that I think are
+10:19
+interesting and I would love to see how
+10:22
+we can have you know free open source
+10:25
+you know available tools for the public
+10:27
+for you guys to interact with and use it
+10:29
+in your own workflows I mean that's just
+10:32
+my experience and I thought it was
+10:33
+really cool like I like this idea of
+Channel Goals and Future Content
+10:36
+looking at how people learn and how
+10:38
+machines learn and just try to find the
+10:41
+intersections when we can build tools
+10:44
+that you know improve and augment Our
+10:46
+Lives I know it sounds kind of like
+10:48
+cliche and stuff but this is really the
+10:50
+goal of the Shadow and I want to keep
+10:53
+doing videos where I you know maybe in
+10:55
+the future I won't even do podcasts I'll
+10:57
+talk to people because my goal is to
+11:00
+have a place where you can go and it has
+11:02
+like the latest tools that you can use
+11:04
+to build something that helps you do
+11:07
+research it helps you do learning
+11:10
+and that's pretty much it this pretty
+11:12
+much covers what I've been doing lately
+11:14
+uh I'm working on some proposals for
+Upcoming Training Courses and Conclusion
+11:18
+some new like training courses that I
+11:20
+want to do in the future so I'll keep
+11:22
+you guys updated all that all right
+11:24
+thank you guys for watching don't forget
+11:26
+to like And subscribe and see you next
+11:28
+time cheers

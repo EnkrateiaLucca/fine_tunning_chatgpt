@@ -1,0 +1,11 @@
+📚Chapters
+0:00 - Introduction
+0:02 - Building the transcription app with Whisper & Gradio
+0:31 - Importing dependencies
+0:43 - Writing the transcribe_audio function
+1:26 - Setting up the main function
+2:00 - Defining the Gradio interface
+3:02 - Adding a title & description for the app
+3:42 - Launching the interface
+4:05 - Testing the app
+5:20 - Conclusion and follow up

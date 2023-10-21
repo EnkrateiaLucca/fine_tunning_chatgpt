@@ -1,0 +1,13 @@
+📚 Chapters:
+00:00 - Introduction
+00:26 - Questioning transformer-based models
+00:43 - Lack of ability to perform compositional reasoning
+01:00 - Three tasks to assess capabilities
+01:33 - Hypotheses for the paper
+02:17 - Formulating compositional tasks as computation graphs
+03:00 - Three tasks explained
+03:13 - Zero shot accuracy and complexity metrics
+03:48 - Poor generalization and partial solutions
+04:03 - Ratio of correct nodes and decreasing correct answers
+04:13 - Mathematical argument for reducing correct answers
+04:39 - Conclusion and final thoughts

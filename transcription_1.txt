@@ -1,0 +1,96 @@
+0:00
+In this video, you're going to learn how to create Anki flashcards using ChatGPT.
+0:05
+Okay, so we're going to start by importing our dependencies. So essentially, I'm going to import
+0:09
+OS to access the OpenAI API key in my environment as my environment variable. I'm going to import
+0:15
+OpenAI clipboard to get the content from my clipboard. And then Json to save stuff as a Json.
+0:24
+Here's what we're going to do. First, we're going to set up an OpenAI API key.
+0:29
+Then we're going to get the content from my clipboard. So here I'm getting the content
+0:35
+from my clipboard. And the idea is I'm going to copy some text from whatever from a paper,
+0:41
+from a website, etc. And I'm going to run the script. And that's it. I'm going to copy some text,
+0:47
+run the script. And when I run the script, it's going to access the content on my clipboard.
+0:51
+And from there is going to create the Enki flashcards by sending a request to the ChatGPT
+0:57
+API. So let's create a conversation with the ChatGPT. I'm going to set up the role for the
+1:06
+system as a helpful assistant. Before I had set up this as your helpful assistant that creates
+1:12
+Anki flashcards. But I found that it had just because of this little change in the system prompt,
+1:18
+it had problem creating Enki flashcards in the format that I wanted. And then I'm going to set
+1:25
+up the message for the user. And the message for the user is going to be something like create
+1:29
+Enki flashcards with the following text using a format like question answer, which is the format
+1:34
+that's more easily importable to Enki. And I'm going to give it the clipboard content. And that's
+1:42
+it. That's the message. And now I can just set up the request to the API. So I'm just sending a
+1:49
+request to the check completion class, access the create method, and then saying, I'm specifying the
+1:55
+model to GPT for I'm specifying the messages that I just defined in this variable here, that are
+2:01
+have the system message and the user message, the system message describing the behavior that I
+2:06
+expect, and the user message describing what I want specifically, right, that's my actual prompt.
+2:12
+And then I'm going to set up the temperature to 0.7, which is like traditionally is a good number
+2:17
+to set for these kinds of things. I'm going to set up the max tokens. And I'm going to create,
+2:24
+I'm going to save the answer from the model to a variable called generate flashcards.
+2:30
+And from there, I'm going to save them to a file. And that's pretty much it. I actually
+2:37
+didn't use Jason. So let's just remove this. And now let's test this out. So what we're going to do
+2:43
+is I'm going to have I have a paper here. And I'm just going to copy the contents from let's say,
+2:53
+the beginning of this paper, let's say this was a paper that I was studying and I already read. And
+2:58
+now I want to kind of like, okay, so I want the some information that's here, I want to save it.
+3:03
+But I don't want to be creating each Enki flashcard, right? So I copied. So now let's check that I
+3:09
+copied. Perfect. It's in my clipboard. So now I can just come here and run the script. So I'm
+3:15
+going to run flashcards, check it to be perfect. And now let's see the magic happen. So I run the
+3:23
+script, it takes like a few seconds to finish sending the request and getting the response.
+3:30
+All right, perfect. So now I finished running. So I can access that file. And as you can see,
+3:37
+it created the flashcards. So what is camel camel stands for communicative agents for mind
+3:43
+exploration. What is the goal of camel? What is role playing framework? What is inception prompting?
+3:50
+All useful information that was present in the text. Now I can go to Enki.
+3:55
+So I can go to Enki right here. And I can import those flashcards directly. You see, it created
+4:03
+the flashcards front, back, everything is correct. And I can just click import. And now I have the
+4:09
+flashcards to train to access and etc. So yeah, this approach is really cool. I really like this.
+4:16
+I like I really like doing this because you know, you can also do it directly with the
+4:22
+charge PT demo or the charge PT website, which also works really well. But having it as a script
+4:29
+that copies, I can just, you know, stop not think about it too much and just have it on my clipboard
+4:36
+and then just run the script. And I can automate the running of the script. So I can just do it
+4:41
+with a few commands. And I have a bunch of Enki flashcards that usually would have taken me
+4:46
+quite a few minutes to create. So if you like this video, don't forget to like and subscribe
+4:52
+and see you next time. Cheers.
